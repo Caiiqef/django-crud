@@ -1,0 +1,39 @@
+<!DOCTYPE html>  
+<html lang="pt-br">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Dados dos Usuários</title>  
+     {% load static %}  
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>  
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>ID do Usuário</th>  
+        <th>Nome do Usuário</th>  
+        <th>E-mail do Usuário</th>  
+        <th>Senha do Usuário</th>  
+        <th>Ações</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for usuario in usuarios %}  
+    <tr>  
+        <td>{{ usuario.user_id }}</td>  
+        <td>{{ usuario.user_name }}</td>  
+        <td>{{ usuario.user_email }}</td>  
+        <td>{{ usuario.user_password }}</td>  
+        <td>  
+            <a href="/update/{{ usuario.id }}"><span class="glyphicon glyphicon-pencil" >Editar</span></a>  
+            <a href="/delete/{{ usuario.id }}">Deletar</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="/usr" class="btn btn-primary">Adicionar novo registro</a></center>  
+</body>  
+</html>  
