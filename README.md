@@ -11,3 +11,5 @@ def edit on ```views.py``` commented because edit and update seems the same.
 
 ### Tutorial source
 Project built based on [this](https://www.javatpoint.com/django-crud-example) tutorial.
+
+### ⚠ CSS is not working
